@@ -1,3 +1,4 @@
+import { CambioProvider } from "../context/CambioProvider";
 import { Table } from "./Table";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -399,7 +400,7 @@ export let stocks = [
 export const TableFull = () => {
   return (
     <div className="w-full bg-slate-800 mt-10 p-[1px] rounded-lg overflow-x-auto border border-slate-700">
-      <table className="w-full text-center table-auto bg-slate-800 ">
+      <table className="w-full text-center table-auto bg-slate-800">
         <thead>
           <tr className="text-sm text-center text-gray-200 uppercase bg-slate-800">
             <th className="px-4 py-3 text-left">Compañia</th>
@@ -408,12 +409,13 @@ export const TableFull = () => {
             <th className="px-4 py-3">Volumen</th>
             <th className="px-4 py-3">Capitalización de mercado</th>
             <th className="px-4 py-3">Acciones</th>
-            <th className="px-4 py-3"></th>
           </tr>
         </thead>
-        <tbody className="text-sm text-black">
+        <tbody className="text-sm text-white">
           {stocks.map((data) => (
-            <Table key={data.symbol} {...data} />
+            <CambioProvider key={data.symbol} price={data.price}>
+              <Table {...data} />
+            </CambioProvider>
           ))}
         </tbody>
       </table>
