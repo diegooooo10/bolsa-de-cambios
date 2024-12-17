@@ -13,7 +13,7 @@ export const FuncionalidadCompra = ({ symbol, price }) => {
   };
   return (
     <div className="flex justify-center space-x-5">
-      <Cantidad price={price} onCantidadChange={handleCantidadChange} />
+      <Cantidad price={price} symbol={symbol} onCantidadChange={handleCantidadChange} />
       <Compra symbol={symbol} price={price} cantidad={cantidad} />
       <Venta symbol={symbol} price={price} cantidad={cantidad} />
     </div>

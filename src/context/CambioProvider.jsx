@@ -7,7 +7,7 @@ export const CambioProvider = ({ price, children }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomValue = parseFloat((Math.random() * 1.9 + 0.1).toFixed(2));
+      const randomValue = parseFloat((Math.random() * 1.5 + 0.3).toFixed(2));
       const precioActualizado = parseFloat(
         (nuevoPrecio * randomValue).toFixed(2)
       );
